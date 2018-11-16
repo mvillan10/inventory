@@ -102,6 +102,14 @@
     <Content Include="CSS\bootstrap1.min.css" />
     <Content Include="CSS\datatables.min.css" />
     <Content Include="CSS\datepicker3.css" />
+    <Content Include="CSS\patterns\3.png" />
+    <Content Include="CSS\patterns\4.png" />
+    <Content Include="CSS\patterns\header-profile-skin-1.png" />
+    <Content Include="CSS\patterns\header-profile-skin-2.png" />
+    <Content Include="CSS\patterns\header-profile-skin-3.png" />
+    <Content Include="CSS\patterns\header-profile.png" />
+    <Content Include="CSS\patterns\shattered.png" />
+    <Content Include="Home.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -1595,6 +1603,13 @@
     </Compile>
     <Compile Include="Expense.aspx.designer.cs">
       <DependentUpon>Expense.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

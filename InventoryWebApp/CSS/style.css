@@ -861,7 +861,7 @@ h5 {
 }
 .nav.metismenu > li {
   display: block;
-  width: 100%;
+  width: 109%;
   position: relative;
 }
 .nav.metismenu .dropdown-menu > li > a {
@@ -1004,7 +1004,7 @@ h5 {
 .nav-header {
   padding: 33px 25px;
   background-color: #2f4050;
-  background-image: url("patterns/header-profile.png");
+  background-image: url("patterns/header-profile-skin-1.png");
 }
 .caret {
   display: inline-block;
@@ -1026,8 +1026,8 @@ ul.nav-second-level {
   background: #293846;
 }
 .nav > li.active {
-  border-left: 4px solid #19aa8d;
-  background: #293846;
+  border-left: 4px solid #1590d8;
+  background: #1690d8;
 }
 .nav.nav-second-level > li.active {
   border: none;
