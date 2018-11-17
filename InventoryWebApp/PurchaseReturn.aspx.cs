@@ -285,5 +285,10 @@ namespace InventoryWebApp
             }
             ReturnItemsData();
         }
+
+        protected void logout(object sender, EventArgs e)
+        {
+
+        }
     }
 }

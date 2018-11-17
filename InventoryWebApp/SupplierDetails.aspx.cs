@@ -54,5 +54,9 @@ namespace InventoryWebApp
         {
             this.SearchSupplier();
         }
+        protected void logout(object sender, EventArgs e)
+        {
+
+        }
     }
 }

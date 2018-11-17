@@ -94,7 +94,11 @@ namespace InventoryWebApp
             }
             
         }
+        protected void logout(object sender, EventArgs e)
+        {
 
-    
+        }
+
+
     }
 }

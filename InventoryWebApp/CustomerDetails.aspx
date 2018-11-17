@@ -57,22 +57,93 @@
     
 </head>
 
-<body class="">
+<body >
+<form id="form1" runat="server">
+        <div id="wrapper">
+            <nav class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav metismenu" id="side-menu">
+                        <li class="nav-header">
+                            <div class="dropdown profile-element">
+                            </div>
+                            <div class="logo-element">
+                                IN+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="Home.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboards</span> </a>
 
+                        </li>
+                        <li>
+                            <a href="Products.aspx"><i class="fa fa-shopping-basket"></i><span class="nav-label">Products</span></a>
+                        </li>
+                        <li>
+                            <a href="AddOrder.aspx"><i class="fa fa-cart-plus"></i><span class="nav-label">Order</span></a>
+                        </li>
+                        <li>
+                            <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase<span class="fa arrow"></span></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales<span class="fa arrow"></span></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="SalesReturn.aspx">Sales Return</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="CustomerDetails.aspx"><i class="fa fa-user-circle"></i><span class="nav-label">Customer Details</span></a>
+                        </li>
+                        <li>
+                            <a href="SupplierDetails.aspx"><i class="fa fa-users"></i><span class="nav-label">Supplier Details</span></a>
+                        </li>
+                        <li>
+                            <a href="CreditRepay.aspx"><i class="fa fa-credit-card"></i><span class="nav-label">Credit Repay</span></a>
+                        </li>
+                        <li>
+                            <a href="Expense.aspx"><i class="fa fa-shopping-bag"></i><span class="nav-label">Other Expense</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-book"></i><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li><a href="OrderSummary.aspx">Order</a></li>
+                                <li><a href="Search.aspx">Sales Invoice</a></li>
+                                <li><a href="SearchByDate.aspx">Detail Report</a></li>
 
+                            </ul>
+                        </li>
 
-    <div id="page-wrapper" class="gray-bg">
-       
-          <div class="wrapper wrapper-content">
-           
-                <div class="row">
-                    <div class="col-lg-12">
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div id="page-wrapper1" class="gray-bg">
+                <div class="row border-bottom">
+                    <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+                        </div>
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li>
+                                <span class="m-r-sm text-muted welcome-message">Welcome to ...... Dashboard.</span>
+                            </li>
+
+                            <li>
+                                <asp:LinkButton runat="server" ID="btnLogout" OnClick="logout">
+                            <i class="fa fa-sign-out"></i>Logout</asp:LinkButton>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <div class="col-sm">
                         <div class="ibox">
                             <div class="ibox-title text-center">
                                 <h5>Customer Details</h5>
                             </div>
                             <div class="ibox-content">   
-                                <form id="form1" runat="server">
+                                
                                    <div class="row">
                                         <div class="col-lg-12">
                                             
@@ -115,7 +186,7 @@
                                        
 
                                   
-                                </form>
+                                
                               
                             </div>
                         </div>
@@ -124,7 +195,7 @@
                 </div>
            </div> 
         </div>
-        
+        </form>
 
  </body>  
 

@@ -71,3 +71,6 @@
     width:120px !important;
     display:inline-block !important;
 }
+.float-right {
+  margin-right: -75px;
+}

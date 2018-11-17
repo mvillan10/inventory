@@ -297,5 +297,9 @@ namespace InventoryWebApp
                 txtTotal.Text = total.ToString();
             }
         }
+        protected void logout(object sender, EventArgs e)
+        {
+
+        }
     }
 }
