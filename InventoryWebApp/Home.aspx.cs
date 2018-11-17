@@ -26,22 +26,12 @@ namespace InventoryWebApp
             if (!IsPostBack)
             {
                 getData();
+                getDailyData();
             }
                 
         }
         public void getData()
         {
-            a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable");
-            totalPurchaseNo = a.DT.Rows[0][0].ToString();
-            totalPurchaseAmount = a.DT.Rows[0][1].ToString();
-            a.ds.Clear();
-            a.DT.Clear();
-
-            a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable");
-            totalSalesNo = a.DT.Rows[0][0].ToString();
-            totalSalesAmount = a.DT.Rows[0][1].ToString();
-            a.ds.Clear();
-            a.DT.Clear();
 
             a.ExcecuteQuery("select COUNT(distinct Order_no) from OrderTable");
             totalOrder = a.DT.Rows[0][0].ToString();
@@ -64,14 +54,151 @@ namespace InventoryWebApp
             totalProducts = a.DT.Rows[0][0].ToString();
             a.ds.Clear();
             a.DT.Clear();
+            
 
-            a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable");
-            totalExpense = a.DT.Rows[0][0].ToString();
+        }
+        public void getDailyData()
+        {
+            a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where P_Date='" + DateTime.Now.Date + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalPurchaseNo = a.DT.Rows[0][0].ToString();
+                totalPurchaseAmount = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalPurchaseNo = "0";
+                totalPurchaseAmount = "0";
+            }
             a.ds.Clear();
             a.DT.Clear();
 
-        }
+            a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where Date='" + DateTime.Now.Date + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalSalesNo = a.DT.Rows[0][0].ToString();
+                totalSalesAmount = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalSalesNo = "0";
+                totalSalesAmount = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
 
+            a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where Date='" + DateTime.Now.Date + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalExpense = a.DT.Rows[0][0].ToString();
+            }
+            else
+            {
+                totalExpense = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+        }
+        public void getMonthlyData()
+        {
+            a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where month(P_Date)='" + DateTime.Now.Month + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalPurchaseNo = a.DT.Rows[0][0].ToString();
+                totalPurchaseAmount = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalPurchaseNo = "0";
+                totalPurchaseAmount = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+
+            a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where month(Date)='" + DateTime.Now.Date.Month + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalSalesNo = a.DT.Rows[0][0].ToString();
+                totalSalesAmount = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalSalesNo = "0";
+                totalSalesAmount = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+
+            a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where month(Date)='" + DateTime.Now.Date.Month + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalExpense = a.DT.Rows[0][0].ToString();
+            }
+            else
+            {
+                totalExpense = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+        }
+        public void getYearlyData()
+        {
+            a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where year(P_Date)='" + DateTime.Now.Date.Year + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalPurchaseNo = a.DT.Rows[0][0].ToString();
+                totalPurchaseAmount = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalPurchaseNo = "0";
+                totalPurchaseAmount = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+
+            a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where year(Date)='" + DateTime.Now.Year + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalSalesNo = a.DT.Rows[0][0].ToString();
+                totalSalesAmount = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalSalesNo = "0";
+                totalSalesAmount = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+
+            a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where year(Date)='" + DateTime.Now.Year + "'");
+            if (a.DT.Rows.Count != 0)
+            {
+                totalExpense = a.DT.Rows[0][0].ToString();
+            }
+            else
+            {
+                totalExpense = "0";
+            }
+            a.ds.Clear();
+            a.DT.Clear();
+        }
+        protected void btnDay_Click(object sender, EventArgs e)
+        {
+            getData();
+            getDailyData();
+            
+        }
+        protected void btnMonth_Click(object sender, EventArgs e)
+        {
+            getData();
+            getMonthlyData();
+        }
+        protected void btnYear_Click(object sender, EventArgs e)
+        {
+            getData();
+            getYearlyData();
+        }
         protected void logout(object sender, EventArgs e)
         {
 

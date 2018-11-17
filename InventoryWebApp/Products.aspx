@@ -90,7 +90,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="Admin.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboards</span> </a>
+                        <a href="Home.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboards</span> </a>
 
                     </li>
                     <li>

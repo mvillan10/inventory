@@ -88,7 +88,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="Admin.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboards</span> </a>
+                            <a href="Home.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboards</span> </a>
 
                         </li>
                         <li>
@@ -156,18 +156,7 @@
                     </nav>
                     <div class="wrapper wrapper-content">
                         <div class="row">
-                            <%--<div class="col-lg-2">
-                                <div class="ibox ">
-                                    <div class="ibox-title">
-                                        <span class="label label-info">Suppliers</span>
-
-                                    </div>
-                                    <div class="ibox-content">
-                                        <h1 class="no-margins"><%= totalSuppliers %></h1>
-                                        <small>Total No. of Suppliers</small>
-                                    </div>
-                                </div>
-                            </div>--%>
+                            
 
                             <div class="col-lg-2">
                                 <div class="ibox ">
@@ -175,7 +164,7 @@
                                         <span class="label label-info">Products</span>
                                     </div>
                                     <div class="ibox-content">
-                                        <h1 class="no-margins"><%= totalProducts %></h1>
+                                        <h1 class="no-margins" style="font:bold"><%= totalProducts %></h1>
                                         <small>Total No. of Products</small>
                                     </div>
                                 </div>
@@ -231,15 +220,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="ibox-content">
+                                <asp:Button ID="btnDay" runat="server" CssClass="btn btn-white" Text="Today" OnClick="btnDay_Click" />
+                                <asp:Button ID="btnMonth" runat="server" CssClass="btn btn-white" Text="Monthly" OnClick="btnMonth_Click" />
+                                <asp:Button ID="btnYear" runat="server" CssClass="btn btn-white" Text="Annual" OnClick="btnYear_Click" />                            <div class="ibox-title">
+                                
+                            </div>
+                            <div class="row">
+                            
                             <div class="col-lg-4">
-                                <div class="ibox ">
-                                    <div class="ibox-title">
-                                        <h5 style="background-color: #1c84c6;color: #FFFFFF;">Purchase</h5>
-                                        <%--<span class="label label-success float-right">Purchase</span>--%>
+                                <div class=" ibox">
+                                    <div <%--class="ibox-title"--%>>
+                                        <span class="label label-info">Purchase</span>
                                     </div>
-                                    <div class="ibox-content">
-
+                                    <div <%--class="ibox-content"--%>>
+                                        <br />
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h1 class="no-margins"><%= totalPurchaseNo %></h1>
@@ -256,10 +251,11 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="ibox ">
-                                    <div class="ibox-title">
-                                        <h5>Sales</h5>
+                                    <div <%--class="ibox-title"--%>>
+                                        <span class="label label-info">Sales</span>
                                     </div>
-                                    <div class="ibox-content">
+                                    <div <%--class="ibox-content"--%>>
+                                        <br />
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <h1 class="no-margins"><%= totalSalesNo %></h1>
@@ -275,17 +271,19 @@
                             </div>
                             <div class="col-lg-2">
                                 <div class="ibox ">
-                                    <div class="ibox-title">
+                                    <div <%-- class="ibox-title"--%>>
                                         <span class="label label-info">Expense</span>
                                     </div>
-                                    <div class="ibox-content">
+                                    <div <%--class="ibox-content"--%>>
+                                        <br />
                                         <h1 class="no-margins"><%= totalExpense %></h1>
                                         <small>Total Expense</small>
                                     </div>
                                 </div>
                             </div>
-
+                            </div>
                         </div>
+                        
                     </div>
 
                 </div>
