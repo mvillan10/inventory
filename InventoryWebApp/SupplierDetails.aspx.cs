@@ -12,6 +12,17 @@ namespace InventoryWebApp
     public partial class SupplierDetails : System.Web.UI.Page
     {
         DBC a = new DBC();
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -56,7 +67,9 @@ namespace InventoryWebApp
         }
         protected void logout(object sender, EventArgs e)
         {
-
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }

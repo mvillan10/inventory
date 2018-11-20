@@ -21,6 +21,17 @@ namespace InventoryWebApp
         public string totalExpense;
         public string totalCusCredit;
         public string totalSupCredit;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -59,7 +70,7 @@ namespace InventoryWebApp
         }
         public void getDailyData()
         {
-            a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where P_Date='" + DateTime.Now.Date + "'");
+            a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where day(P_Date)='" + DateTime.Now.Day + "' and month(P_Date)='" + DateTime.Now.Month + "' and year(P_Date)='" + DateTime.Now.Year + "' ");
             if (a.DT.Rows.Count != 0)
             {
                 totalPurchaseNo = a.DT.Rows[0][0].ToString();
@@ -73,7 +84,7 @@ namespace InventoryWebApp
             a.ds.Clear();
             a.DT.Clear();
 
-            a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where Date='" + DateTime.Now.Date + "'");
+            a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where Date='" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "'");
             if (a.DT.Rows.Count != 0)
             {
                 totalSalesNo = a.DT.Rows[0][0].ToString();
@@ -87,8 +98,8 @@ namespace InventoryWebApp
             a.ds.Clear();
             a.DT.Clear();
 
-            a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where Date='" + DateTime.Now.Date + "'");
-            if (a.DT.Rows.Count != 0)
+            a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where Date='" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "'");
+            if (a.DT.Rows[0][0].ToString()!= "")
             {
                 totalExpense = a.DT.Rows[0][0].ToString();
             }
@@ -130,7 +141,7 @@ namespace InventoryWebApp
             a.DT.Clear();
 
             a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where month(Date)='" + DateTime.Now.Date.Month + "'");
-            if (a.DT.Rows.Count != 0)
+            if (a.DT.Rows[0][0].ToString() != "")
             {
                 totalExpense = a.DT.Rows[0][0].ToString();
             }
@@ -172,7 +183,7 @@ namespace InventoryWebApp
             a.DT.Clear();
 
             a.ExcecuteQuery(" select SUM (Amount) from ExpenseTable where year(Date)='" + DateTime.Now.Year + "'");
-            if (a.DT.Rows.Count != 0)
+            if (a.DT.Rows[0][0].ToString() != "")
             {
                 totalExpense = a.DT.Rows[0][0].ToString();
             }
@@ -201,7 +212,9 @@ namespace InventoryWebApp
         }
         protected void logout(object sender, EventArgs e)
         {
-
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }

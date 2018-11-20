@@ -17,6 +17,17 @@ namespace InventoryWebApp
         DBC f = new DBC();
         DBC g = new DBC();
         DBC h = new DBC();
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             lblSale.Visible = false;
@@ -253,9 +264,15 @@ namespace InventoryWebApp
                 litTax.Text = Convert.ToString(Convert.ToDouble(d.DT.Rows[0][0].ToString()) - Convert.ToDouble(h.DT.Rows[0][0].ToString()));
             }
         }
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
+        }
 
-      
 
-        
+
+
     }
 }

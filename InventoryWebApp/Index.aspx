@@ -29,7 +29,7 @@
                 <div class="form-group">
                     <asp:Textbox ID="txtpassword" runat="server"  CssClass="form-control" placeholder="Password" TextMode="Password" required=""/>
                 </div>
-                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary block full-width m-b" OnClick="btnLogin_Click"/>
+                <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success block full-width m-b" OnClick="btnLogin_Click"/>
 
                     <p class="text-muted text-center"><small>Do not have an account?</small></p>
                 <a class="btn btn-sm btn-white btn-block" href="Register.aspx">Register an account</a>

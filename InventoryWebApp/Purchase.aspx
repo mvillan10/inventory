@@ -112,6 +112,10 @@
                     <ul class="nav metismenu" id="side-menu">
                         <li class="nav-header">
                             <div class="dropdown profile-element">
+                                <a class="dropdown-toggle" href="#">
+                                    <span class="block m-t-xs font-bold"><%=Session["User"]%></span>
+                                    <span class="text-muted text-xs block"><%=Session["UserId"]%> </span>
+                                </a>
                             </div>
                             <div class="logo-element">
                                 IN+
@@ -128,14 +132,15 @@
                             <a href="AddOrder.aspx"><i class="fa fa-cart-plus"></i><span class="nav-label">Order</span></a>
                         </li>
                         <li>
-                            <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
-                            </ul>
+                            <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase</span></a>
                         </li>
                         <li>
-                            <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales<span class="fa arrow"></span></span></a>
+                            <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales</span></a>
+                        </li>
+                        <li>
+                            <a href="PurchaseReturn.aspx"><i class="fa fa-cart-arrow-down"></i><span class="nav-label">Return<span class="fa arrow"></span></span></a>
                             <ul class="nav nav-second-level collapse">
+                                <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
                                 <li><a href="SalesReturn.aspx">Sales Return</a></li>
                             </ul>
                         </li>
@@ -155,8 +160,9 @@
                             <a href="#"><i class="fa fa-book"></i><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 <li><a href="OrderSummary.aspx">Order</a></li>
+                                <li><a href="PurchaseDetailReport.aspx">Purchase Detail Report</a></li>
                                 <li><a href="Search.aspx">Sales Invoice</a></li>
-                                <li><a href="SearchByDate.aspx">Detail Report</a></li>
+                                <li><a href="SearchByDate.aspx">Sales Detail Report</a></li>
 
                             </ul>
                         </li>

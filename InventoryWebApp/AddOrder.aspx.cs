@@ -24,6 +24,16 @@ namespace InventoryWebApp
         DBC g = new DBC();
         DBC h = new DBC();
         DBC j = new DBC();
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -166,6 +176,12 @@ namespace InventoryWebApp
         {
             loadSup();
         }
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
+        }
     }
-    }
+}
        

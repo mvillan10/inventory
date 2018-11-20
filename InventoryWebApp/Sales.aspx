@@ -92,10 +92,93 @@
 </head>
  <body>
 <form id="form1" runat="server">
-    <div id="page-wrapper" class="gray-bg">
-        <div class="wrapper wrapper-content">
-           <div class="row">
-                <div class="col-lg-12">
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            
+                            <a class="dropdown-toggle" href="#">
+                                    <span class="block m-t-xs font-bold"><%=Session["User"]%></span>
+                                    <span class="text-muted text-xs block"><%=Session["UserId"]%> </span>
+                                </a>
+                            
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="Home.aspx"><i class="fa fa-th-large"></i><span class="nav-label">Dashboards</span> </a>
+
+                    </li>
+                    <li>
+                        <a  href="Products.aspx" ><i class="fa fa-shopping-basket"></i><span class="nav-label">Products</span></a>
+                    </li>
+                    <li>
+                        <a  href="AddOrder.aspx" ><i class="fa fa-cart-plus"></i><span class="nav-label">Order</span></a>
+                    </li>
+                    <li>
+                        <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase</span></a>
+                    </li>
+                    <li>
+                        <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales</span></a>
+                    </li>
+                    <li>
+                        <a href="PurchaseReturn.aspx"><i class="fa fa-cart-arrow-down"></i><span class="nav-label">Return<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
+                            <li><a href="SalesReturn.aspx">Sales Return</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="CustomerDetails.aspx" ><i class="fa fa-user-circle"></i><span class="nav-label">Customer Details</span></a>
+                    </li>
+                    <li>
+                        <a  href="SupplierDetails.aspx" ><i class="fa fa-users"></i><span class="nav-label">Supplier Details</span></a>
+                    </li>
+                    <li>
+                        <a  href="CreditRepay.aspx" ><i class="fa fa-credit-card"></i><span class="nav-label">Credit Repay</span></a>
+                    </li>
+                    <li>
+                        <a  href="Expense.aspx" ><i class="fa fa-shopping-bag"></i><span class="nav-label">Other Expense</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-book"></i><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                                <li><a href="OrderSummary.aspx">Order</a></li>
+                                <li><a href="PurchaseDetailReport.aspx">Purchase Detail Report</a></li>
+                                <li><a href="Search.aspx">Sales Invoice</a></li>
+                                <li><a href="SearchByDate.aspx">Sales Detail Report</a></li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper1" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">Welcome to Product Dashboard.</span>
+                        </li>
+                       
+                        <li>
+                            <asp:LinkButton runat="server" ID="btnLogout" OnClick="logout">
+                            <i class="fa fa-sign-out"></i>Logout</asp:LinkButton>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <div class=" col-sm">
                      <div class="ibox">
                          <div class="ibox-title text-center">
                              <h5>Invoice Details</h5>
@@ -107,8 +190,8 @@
                                                  <asp:Label ID="lblNo" runat="server" Text="Invoice No."></asp:Label>
                                                 <asp:TextBox runat="server" ID="txtNo" TextMode="SingleLine" CssClass="form-control" style="width:134px !important; display:inline-block !important" Enabled="false"/>
                                                 <asp:Label ID="lblPer" runat="server" Text="Sales Person" style="margin-left:33px"></asp:Label>
-                                                <asp:TextBox runat="server" ID="txtPer" TextMode="SingleLine" CssClass="form-control" style="width:134px !important; display:inline-block !important" Enabled="false"/>
-                                                <asp:Label ID="lblDate" runat="server" Text="Date:" style="margin-left:385px" ></asp:Label>
+                                                <asp:TextBox runat="server" ID="txtPer" TextMode="SingleLine" CssClass="form-control" style="width:185px !important; display:inline-block !important" Enabled="false"/>
+                                                <asp:Label ID="lblDate" runat="server" Text="Date:" style="margin-left:270px" ></asp:Label>
                                                <asp:TextBox runat="server" ID="txtDate" TextMode="SingleLine" CssClass="form-control" style="width:120px !important; display:inline-block !important"/>
                                                 <asp:Button ID="btnNew" runat="server" OnClick="btnNew_Click" Text="New" CssClass="btn btn-success" />
                                                 <a runat="server" onclick="MyPopUpWin('/SalesReport.aspx',1100,600); return false;" id="btnPrint" class="btn btn-success" Visible="false"><i class="fa fa-print"></i>&nbsp;Print</a>
@@ -120,7 +203,7 @@
                                                       <asp:ListItem Text="cash"></asp:ListItem>
                                                       <asp:ListItem Text="credit"></asp:ListItem>
                                                 </asp:DropDownList>
-                                                <asp:Label ID="lblCus" runat="server" Text="Customer Name"></asp:Label>
+                                                <asp:Label ID="lblCus" runat="server" Text="Customer Name" style="margin-left: 75px"></asp:Label>
                                                 <asp:DropDownList runat="server" ID="ddlCus" CssClass="form-control ddlht width" AutoPostBack="true"/>
                                                 <a onclick="MyPopUpWin1('/AddCustomer.aspx',1000,600);" class="btn btn-success float-left m-t-n-xs" style="margin-left: 0px;color:#fff"><i class="fa fa-plus"></i></a>
                                                 <br /><br />

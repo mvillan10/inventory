@@ -56,7 +56,7 @@
                     <asp:Textbox ID="txtConfirm" runat="server"  CssClass="form-control" placeholder="Confirm Password" TextMode="Password" required/>
                     <asp:CompareValidator ID="compConfirm" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirm" ErrorMessage="Password mismatch!" ForeColor="Red"></asp:CompareValidator>
                 </div>
-                <asp:Button ID="btnReg" runat="server" Text="Register" CssClass="btn btn-primary block full-width m-b" OnClick="btnReg_Click"/>
+                <asp:Button ID="btnReg" runat="server" Text="Register" CssClass="btn btn-success block full-width m-b" OnClick="btnReg_Click"/>
                 
              </form>
             

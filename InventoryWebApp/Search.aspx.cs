@@ -17,6 +17,17 @@ namespace InventoryWebApp
         DBC d = new DBC();
         DBC f = new DBC();
         DBC g = new DBC();
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
@@ -127,6 +138,12 @@ namespace InventoryWebApp
                 litTax.Text = ttax;
                 litTot.Text = tot;
             }
+        }
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }

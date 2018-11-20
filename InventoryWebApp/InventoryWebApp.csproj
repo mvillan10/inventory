@@ -115,6 +115,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="PurchaseDetailReport.aspx" />
     <Content Include="PurchaseDS.xsc">
       <DependentUpon>PurchaseDS.xsd</DependentUpon>
     </Content>
@@ -143,6 +144,7 @@
     <Content Include="PurchaseDS.xss">
       <DependentUpon>PurchaseDS.xsd</DependentUpon>
     </Content>
+    <Content Include="PurchaseMonthlyReport.aspx" />
     <Content Include="PurchaseReturnDS.xsc">
       <DependentUpon>PurchaseReturnDS.xsd</DependentUpon>
     </Content>
@@ -154,6 +156,7 @@
     <Content Include="PurchaseReturnDS.xss">
       <DependentUpon>PurchaseReturnDS.xsd</DependentUpon>
     </Content>
+    <Content Include="PurchaseYearReport.aspx" />
     <Content Include="RDateReport.aspx" />
     <Content Include="RDRangeReport.aspx" />
     <Content Include="ReportDS.xsc">
@@ -1659,11 +1662,37 @@
     <Compile Include="Purchase.aspx.designer.cs">
       <DependentUpon>Purchase.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PurchaseAnnualReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseAnnualReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PurchaseDetailReport.aspx.cs">
+      <DependentUpon>PurchaseDetailReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseDetailReport.aspx.designer.cs">
+      <DependentUpon>PurchaseDetailReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseDetailReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseDetailReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PurchaseDS.Designer.cs" />
     <Compile Include="PurchaseDS1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PurchaseDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseMonthlyReport.aspx.cs">
+      <DependentUpon>PurchaseMonthlyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseMonthlyReport.aspx.designer.cs">
+      <DependentUpon>PurchaseMonthlyReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="PurchaseReport.cs">
       <AutoGen>True</AutoGen>
@@ -1689,6 +1718,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PurchaseReturnReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PurchaseYearReport.aspx.cs">
+      <DependentUpon>PurchaseYearReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseYearReport.aspx.designer.cs">
+      <DependentUpon>PurchaseYearReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="RDateReport.aspx.cs">
       <DependentUpon>RDateReport.aspx</DependentUpon>
@@ -1870,6 +1906,14 @@
     <EmbeddedResource Include="OrderRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OrderRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseAnnualReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseAnnualReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PurchaseDetailReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

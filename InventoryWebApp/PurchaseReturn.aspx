@@ -7,10 +7,11 @@
     <title>Purchase | Return</title>
     <link href="css/default.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -33,7 +34,7 @@
 
     <!-- Custom and plugin javascript -->
     <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <%--<script src="js/plugins/pace/pace.min.js"></script>--%>
 
     <!-- jQuery UI -->
     <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -53,8 +54,6 @@
     <script src="js/plugins/dataTables/datatables.min.js"></script>
     <script src="js/plugins/dataTables/dataTables.bootstrap4.min.js"></script>
 
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="Scripts/jquery.searchabledropdown-1.0.8.min.js" type="text/javascript"></script>
     <%-- <script type="text/javascript">
         $(document).ready(function () {
@@ -111,6 +110,10 @@
                     <ul class="nav metismenu" id="side-menu">
                         <li class="nav-header">
                             <div class="dropdown profile-element">
+                                <a class="dropdown-toggle" href="#">
+                                    <span class="block m-t-xs font-bold"><%=Session["User"]%></span>
+                                    <span class="text-muted text-xs block"><%=Session["UserId"]%> </span>
+                                </a>
                             </div>
                             <div class="logo-element">
                                 IN+
@@ -127,14 +130,15 @@
                             <a href="AddOrder.aspx"><i class="fa fa-cart-plus"></i><span class="nav-label">Order</span></a>
                         </li>
                         <li>
-                            <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
-                            </ul>
+                        <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase</span></a>
                         </li>
                         <li>
-                            <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales<span class="fa arrow"></span></span></a>
+                            <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales</span></a>
+                        </li>
+                        <li>
+                            <a href="PurchaseReturn.aspx"><i class="fa fa-cart-arrow-down"></i><span class="nav-label">Return<span class="fa arrow"></span></span></a>
                             <ul class="nav nav-second-level collapse">
+                                <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
                                 <li><a href="SalesReturn.aspx">Sales Return</a></li>
                             </ul>
                         </li>
@@ -154,8 +158,9 @@
                             <a href="#"><i class="fa fa-book"></i><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
                                 <li><a href="OrderSummary.aspx">Order</a></li>
+                                <li><a href="PurchaseDetailReport.aspx">Purchase Detail Report</a></li>
                                 <li><a href="Search.aspx">Sales Invoice</a></li>
-                                <li><a href="SearchByDate.aspx">Detail Report</a></li>
+                                <li><a href="SearchByDate.aspx">Sales Detail Report</a></li>
 
                             </ul>
                         </li>

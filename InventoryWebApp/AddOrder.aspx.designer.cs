@@ -22,6 +22,15 @@ namespace InventoryWebApp {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// btnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnLogout;
+        
+        /// <summary>
         /// lblOrderProduct control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace InventoryWebApp {
         protected global::System.Web.UI.WebControls.Label lblOrder;
         
         /// <summary>
+        /// lblSup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSup;
+        
+        /// <summary>
         /// txtOrder control.
         /// </summary>
         /// <remarks>
@@ -49,13 +67,13 @@ namespace InventoryWebApp {
         protected global::System.Web.UI.WebControls.TextBox txtOrder;
         
         /// <summary>
-        /// lblSup control.
+        /// ddlSup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSup;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSup;
         
         /// <summary>
         /// lblProd control.
@@ -74,15 +92,6 @@ namespace InventoryWebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPqty;
-        
-        /// <summary>
-        /// ddlSup control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSup;
         
         /// <summary>
         /// ddlProd control.

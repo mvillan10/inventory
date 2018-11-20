@@ -13,6 +13,16 @@ namespace InventoryWebApp
         DBC b = new DBC();
         DBC c = new DBC();
         public string cid;
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

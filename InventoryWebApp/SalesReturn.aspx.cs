@@ -31,6 +31,17 @@ namespace InventoryWebApp
         DBC q = new DBC();
         DBC r = new DBC();
         DBC s = new DBC();
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -313,6 +324,12 @@ namespace InventoryWebApp
         {
         //    txtTotal.Text = Convert.ToString(Convert.ToDouble(txtUnit.Text) * Convert.ToDouble(txtPrice.Text));
             
+        }
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }

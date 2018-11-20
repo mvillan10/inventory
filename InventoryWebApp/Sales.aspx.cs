@@ -30,13 +30,24 @@ namespace InventoryWebApp
         DBC t = new DBC();
         public string no;
         public int count = 0;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 txtDate.Text = now.Date.ToString("dd-MM-yyyy");
                 txtNo.Text = noGen();
-
+                txtPer.Text = Session["User"].ToString();
                 clear();
                 loadCat();
                 loadItem();
@@ -329,6 +340,12 @@ namespace InventoryWebApp
                 string ttax = Convert.ToString(Convert.ToDouble(tax) * Convert.ToDouble(qty));
                 litTax.Text = ttax;
             }
+        }
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }

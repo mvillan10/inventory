@@ -17,6 +17,16 @@ namespace InventoryWebApp
         string tax;
         DBC a = new DBC();
         DBC b = new DBC();
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

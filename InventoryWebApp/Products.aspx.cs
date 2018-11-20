@@ -11,6 +11,17 @@ namespace InventoryWebApp
     {
         public int count = 0; 
         DBC a = new DBC();
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -25,7 +36,9 @@ namespace InventoryWebApp
         }
         protected void logout(object sender, EventArgs e)
         {
-            
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
 
         protected void refresh(object sender, EventArgs e)

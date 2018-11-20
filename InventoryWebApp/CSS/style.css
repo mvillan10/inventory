@@ -1039,7 +1039,8 @@ ul.nav-second-level {
   color: #DFE4ED;
 }
 .nav-header .text-muted {
-  color: #8095a8 !important;
+  color: #2f4050 !important;
+  font-size:15px;
 }
 .minimalize-styl-2 {
   padding: 4px 12px;
@@ -5575,6 +5576,7 @@ body.modal-open .animated {
 body.mini-navbar.fixed-sidebar .profile-element,
 .block {
   display: block !important;
+  font-size: 20px;
 }
 body.mini-navbar.fixed-sidebar .nav-header {
   padding: 33px 25px;

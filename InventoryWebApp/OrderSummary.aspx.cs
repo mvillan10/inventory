@@ -11,6 +11,17 @@ namespace InventoryWebApp
     {
         public int count = 0;
         DBC a = new DBC();
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+            if (Session["User"] == null)
+            {
+                Session["Error"] = "unauthorised";
+                Response.Redirect("Index.aspx");
+
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -89,6 +100,13 @@ namespace InventoryWebApp
             a.ExcecuteQuery("select t2.Order_no,t1.P_name,t2.Quantity,t1.P_price,t2.Total from ProductTable t1 inner join OrderTable t2 on t1.P_id=t2.P_id where t2.Order_date='" + Convert.ToDateTime(txtOrderdate.Text).Date.ToString("yyyy - MM - dd") + "' and t2.Order_no='" + ddlOrder.SelectedValue + "'");
             rptData.DataSource = a.DT;
             rptData.DataBind();
+        }
+
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["User"] = null;
+            Session["UserId"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }
