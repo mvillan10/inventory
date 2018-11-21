@@ -51,13 +51,29 @@ namespace InventoryWebApp
 
             a.ExcecuteQuery(" select COUNT (S_id), SUM(Balance) from SupplierTable");
             totalSuppliers = a.DT.Rows[0][0].ToString();
-            totalSupCredit = a.DT.Rows[0][1].ToString();
+            if (a.DT.Rows[0][1].ToString()!= "")
+            {
+                totalSupCredit = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalSupCredit = "0";
+            }
+            
             a.ds.Clear();
             a.DT.Clear();
 
             a.ExcecuteQuery("select COUNT (C_id), SUM(Bal) from CustomerTable");
             totalCustomers = a.DT.Rows[0][0].ToString();
-            totalCusCredit = a.DT.Rows[0][1].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
+            {
+                totalCusCredit = a.DT.Rows[0][1].ToString();
+            }
+            else
+            {
+                totalCusCredit = "0";
+            }
+            
             a.ds.Clear();
             a.DT.Clear();
 
@@ -71,28 +87,27 @@ namespace InventoryWebApp
         public void getDailyData()
         {
             a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where day(P_Date)='" + DateTime.Now.Day + "' and month(P_Date)='" + DateTime.Now.Month + "' and year(P_Date)='" + DateTime.Now.Year + "' ");
-            if (a.DT.Rows.Count != 0)
+            totalPurchaseNo = a.DT.Rows[0][0].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
             {
-                totalPurchaseNo = a.DT.Rows[0][0].ToString();
                 totalPurchaseAmount = a.DT.Rows[0][1].ToString();
             }
             else
             {
-                totalPurchaseNo = "0";
                 totalPurchaseAmount = "0";
             }
+      
             a.ds.Clear();
             a.DT.Clear();
 
             a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where Date='" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "'");
-            if (a.DT.Rows.Count != 0)
+            totalSalesNo = a.DT.Rows[0][0].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
             {
-                totalSalesNo = a.DT.Rows[0][0].ToString();
                 totalSalesAmount = a.DT.Rows[0][1].ToString();
             }
             else
             {
-                totalSalesNo = "0";
                 totalSalesAmount = "0";
             }
             a.ds.Clear();
@@ -113,28 +128,26 @@ namespace InventoryWebApp
         public void getMonthlyData()
         {
             a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where month(P_Date)='" + DateTime.Now.Month + "'");
-            if (a.DT.Rows.Count != 0)
+            totalPurchaseNo = a.DT.Rows[0][0].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
             {
-                totalPurchaseNo = a.DT.Rows[0][0].ToString();
                 totalPurchaseAmount = a.DT.Rows[0][1].ToString();
             }
             else
             {
-                totalPurchaseNo = "0";
                 totalPurchaseAmount = "0";
             }
             a.ds.Clear();
             a.DT.Clear();
 
             a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where month(Date)='" + DateTime.Now.Date.Month + "'");
-            if (a.DT.Rows.Count != 0)
+            totalSalesNo = a.DT.Rows[0][0].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
             {
-                totalSalesNo = a.DT.Rows[0][0].ToString();
                 totalSalesAmount = a.DT.Rows[0][1].ToString();
             }
             else
             {
-                totalSalesNo = "0";
                 totalSalesAmount = "0";
             }
             a.ds.Clear();
@@ -155,28 +168,26 @@ namespace InventoryWebApp
         public void getYearlyData()
         {
             a.ExcecuteQuery("select COUNT(P_InvoiceNo),SUM(Total) from PurchaseInvoiceTable where year(P_Date)='" + DateTime.Now.Date.Year + "'");
-            if (a.DT.Rows.Count != 0)
+            totalPurchaseNo = a.DT.Rows[0][0].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
             {
-                totalPurchaseNo = a.DT.Rows[0][0].ToString();
                 totalPurchaseAmount = a.DT.Rows[0][1].ToString();
             }
             else
             {
-                totalPurchaseNo = "0";
                 totalPurchaseAmount = "0";
             }
             a.ds.Clear();
             a.DT.Clear();
 
             a.ExcecuteQuery("select COUNT(Bill_no), SUM(Total) from InvoiceTable where year(Date)='" + DateTime.Now.Year + "'");
-            if (a.DT.Rows.Count != 0)
+            totalSalesNo = a.DT.Rows[0][0].ToString();
+            if (a.DT.Rows[0][1].ToString() != "")
             {
-                totalSalesNo = a.DT.Rows[0][0].ToString();
                 totalSalesAmount = a.DT.Rows[0][1].ToString();
             }
             else
             {
-                totalSalesNo = "0";
                 totalSalesAmount = "0";
             }
             a.ds.Clear();

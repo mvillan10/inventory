@@ -28,10 +28,11 @@ namespace InventoryWebApp
                 else
                 {
                     lblUid.Text = "";
-                }
-            b.ExcecuteNonQuery("Update LoginTable set Username='" + txtUsername.Text +"',Password='" +txtPassword.Text +"',flag='true' where Userid='" +txtUserid.Text +"' and flag='false'");
-            Panel1.Visible = true;
-            refresh();
+                    b.ExcecuteNonQuery("Update LoginTable set Username='" + txtUsername.Text + "',Password='" + txtPassword.Text + "',flag='true' where Userid='" + txtUserid.Text + "' and flag='false'");
+                    Panel1.Visible = true;
+                    refresh();
+            }
+            
             clear();
             
         }

@@ -101,14 +101,15 @@
                         <a  href="AddOrder.aspx" ><i class="fa fa-cart-plus"></i><span class="nav-label">Order</span></a>
                     </li>
                     <li>
-                        <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
-                        </ul>
+                        <a href="Purchase.aspx"><i class="fa fa-shopping-cart"></i><span class="nav-label">Purchase</span></a>
                     </li>
                     <li>
-                        <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales<span class="fa arrow"></span></span></a>
+                        <a href="Sales.aspx"><i class="fa fa-window-restore"></i><span class="nav-label">Sales</span></a>
+                    </li>
+                    <li>
+                        <a href="PurchaseReturn.aspx"><i class="fa fa-cart-arrow-down"></i><span class="nav-label">Return<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level collapse">
+                            <li><a href="PurchaseReturn.aspx">Purchase Return</a></li>
                             <li><a href="SalesReturn.aspx">Sales Return</a></li>
                         </ul>
                     </li>

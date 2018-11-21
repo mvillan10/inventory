@@ -140,8 +140,8 @@ namespace InventoryWebApp
         protected void addCat2(object sender, EventArgs e)
         {
             a.DT.Clear();
-            a.ExcecuteQuery("select isnull(max(Cat_id),0)+1 from CategoryTable");
-            a.ExcecuteNonQuery("insert into CategoryTable values('" + a.DT.Rows[0][0].ToString() + "','" + txtAddcat.Text.ToString().Trim() + "')");
+            //a.ExcecuteQuery("select isnull(max(Cat_id),0)+1 from CategoryTable");
+            a.ExcecuteNonQuery("insert into CategoryTable values('" + txtAddcat.Text.ToString().Trim() + "')");
             btnAddcat2.Visible = false;
             btnAddcat.Visible = true;
             txtAddcat.Visible = false;

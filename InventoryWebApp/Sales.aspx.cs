@@ -246,6 +246,7 @@ namespace InventoryWebApp
                 }
                 
                 Bind();
+                txtAmount.Text = tot;
                 btnPrint.Visible = true;
                 btnCancel.Visible = false;
                 btnAdd.Enabled = false;
