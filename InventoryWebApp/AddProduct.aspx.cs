@@ -169,5 +169,20 @@ namespace InventoryWebApp
             btnDelete.Visible = false;
             btnSave.Visible = false;
         }
+
+        protected void txtTaxPercent_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTaxPercent.Text != "")
+            {
+                try
+                {
+                    Double vat = Convert.ToDouble(txtTaxPercent.Text)/100;
+                    txtTax.Text = (Convert.ToDouble(txtPrice.Text) * vat).ToString();
+                }catch
+                {
+
+                }
+            }
+        }
     }
 }

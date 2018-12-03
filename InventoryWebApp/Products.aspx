@@ -175,8 +175,8 @@
                             <div class="table-responsive">
                                 <asp:Repeater ID="rptData" runat="server">
                                     <HeaderTemplate>
-                                        <table class="table table-striped table-hover">
-                                            <thead style="background-color: #1c84c6;color: white">
+                                        <table class="table table-striped table-bordered table-hover dataTables-example">
+                                            <thead>
                                                 <tr>
                                                     <th>No.</th>
                                                     <th>Product_Id</th>

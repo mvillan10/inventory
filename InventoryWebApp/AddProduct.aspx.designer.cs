@@ -157,6 +157,24 @@ namespace InventoryWebApp {
         protected global::System.Web.UI.WebControls.TextBox txtPrice;
         
         /// <summary>
+        /// lblTaxpercent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTaxpercent;
+        
+        /// <summary>
+        /// txtTaxPercent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTaxPercent;
+        
+        /// <summary>
         /// lblTax control.
         /// </summary>
         /// <remarks>

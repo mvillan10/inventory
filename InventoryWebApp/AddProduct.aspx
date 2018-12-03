@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="InventoryWebApp.AddProduct" %>
+﻿<%@ Page Language="C#" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="AddProduct.aspx.cs" Inherits="InventoryWebApp.AddProduct" %>
 
 <!DOCTYPE html>
 <html>
@@ -92,6 +92,11 @@
                                                 <asp:Label ID="lblPrice" runat="server" Text="Unit price"></asp:Label><br />
                                                  <asp:TextBox runat="server" ID="txtPrice" TextMode="SingleLine" CssClass="form-control widthtxt"/><br />
                                             </div>
+                                                <div class="form-group">
+                                                <asp:Label ID="lblTaxpercent" runat="server" Text="VAT% (Optional)"></asp:Label><br />
+                                                 <asp:TextBox runat="server" ID="txtTaxPercent" TextMode="SingleLine" CssClass="form-control widthtxt" AutoPostBack="true" OnTextChanged="txtTaxPercent_TextChanged"/><br />
+                                            </div>
+        
                                             <div class="form-group">
                                                 <asp:Label ID="lblTax" runat="server" Text="VAT/unit"></asp:Label><br />
                                                  <asp:TextBox runat="server" ID="txtTax" TextMode="SingleLine" CssClass="form-control widthtxt"/><br />

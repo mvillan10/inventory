@@ -47,11 +47,7 @@ namespace InventoryWebApp
 
         }
        
-        protected void ddlProd_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         public string ordernoGen()
         {
             orderno = "";
@@ -172,10 +168,7 @@ namespace InventoryWebApp
             }
         }
 
-        protected void ddlSup_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadSup();
-        }
+       
         protected void logout(object sender, EventArgs e)
         {
             Session["User"] = null;

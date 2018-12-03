@@ -176,7 +176,7 @@
                                                 
                                                 <p style="display:flex;"> 
                                                     <asp:TextBox runat="server" ID="txtOrder"  style="display:inline-block !important" TextMode="SingleLine" CssClass="form-control width"/>
-                                                 <asp:DropDownList ID="ddlSup" runat="server" CssClass="form-control ddlht" style="margin-left:36px;width:190px !important;display:inline-block !important" OnSelectedIndexChanged="ddlSup_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                                 <asp:DropDownList ID="ddlSup" runat="server" CssClass="form-control ddlht" style="margin-left:36px;width:190px !important;display:inline-block !important" AutoPostBack="true"></asp:DropDownList>
                                                         <a onclick="MyPopUpWin('/AddSupplier.aspx',600,1000);" class="btn btn-success" style="margin-left: 4px;color:#fff ;display:inline-block !important"><i class="fa fa-plus"></i></a>
                                                   </p>    
                                             </div>
@@ -186,7 +186,7 @@
                                                <br />
                                                  <p style="display:flex;">
                                                      
-                                                        <asp:DropDownList ID="ddlProd" runat="server" CssClass="form-control ddlht" style="width:190px" OnSelectedIndexChanged="ddlProd_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlProd" runat="server" CssClass="form-control ddlht" style="width:190px" AutoPostBack="true"></asp:DropDownList>
                                                         <asp:TextBox runat="server" ID="txtPqty" TextMode="SingleLine" CssClass=" form-control width" style="margin-left:46px" />
                                                         <button runat="server" class="btn btn-success" style="margin-left:20px" onserverclick="addOrder"><i class="fa fa-plus "></i>Add Order</button>
                                                  </p>
