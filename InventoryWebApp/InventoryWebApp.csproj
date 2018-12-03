@@ -1527,7 +1527,9 @@
     <Content Include="Search.aspx" />
     <Content Include="SearchbyDate.aspx" />
     <Content Include="SupplierDetails.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="YearReport.aspx" />
   </ItemGroup>
   <ItemGroup>
